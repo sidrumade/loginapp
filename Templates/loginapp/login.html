@@ -1,0 +1,23 @@
+{% extends 'loginapp/base.html' %}
+
+
+{% block body_block %}
+
+<div style="margin-top:55px; padding-top:55px;" class="container-fluid text-sm-center p-5 bg-info text-white "> <!-- bg-light is background color & p-5 is padding -->
+    <h1 class="display-2">Please Login</h1>
+    <!-- <p class="lead">A One-day Conference About All Things JavaScript!</p> -->
+
+    <form action="{% url 'loginapp:user_login' %}" method="POST">
+
+        {% csrf_token %}
+
+        <label for = "username">Username:</label>
+        <input name="username" type="text" placeholder="Enter username">
+
+        <label for = "password">Username:</label>
+        <input name="password" type="password" placeholder="Enter password">
+
+        <input type="submit" value="Login" class="btn btn-primary">
+    </form>
+    
+{% endblock %}
